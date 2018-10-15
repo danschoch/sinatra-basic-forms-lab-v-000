@@ -12,6 +12,11 @@ class App < Sinatra::Base
   end
 
   post "/new" do
+    @puppy_name = params[:name]
+    @puppy_breed = params[:breed]
+    @puppy_age = params[:age]
+
+    @piglatin = pl.piglatinize(text_from_user)
     erb :display_puppy
   end
 end
